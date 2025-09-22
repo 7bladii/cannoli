@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container { max-width: 800px; margin: 50px auto; padding: 40px; background: white; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        .admin-section { margin-bottom: 40px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+        input, textarea, label { width: 100%; padding: 12px; margin-bottom: 10px; box-sizing: border-box; display: block; font-family: 'Montserrat', sans-serif; border: 1px solid #ccc; border-radius: 4px; }
+        label { border: none; padding: 0; margin-bottom: 5px; font-weight: bold; }
+        
+        /* Styles for the product list */
+        .product-list-item { display: flex; align-items: center; justify-content: space-between; padding: 10px 0; border-top: 1px solid #f0f0f0; }
+        .product-list-item:first-child { border-top: none; }
+        .product-list-info { display: flex; align-items: center; gap: 15px; }
+        .product-list-info img { width: 50px; height: 50px; object-fit: cover; border-radius: 4px; }
+        .product-list-actions button { padding: 8px 12px; font-size: 0.9rem; margin-left: 10px; width: auto; }
+        .edit-btn { background-color: #3498db; }
+        .delete-btn { background-color: #e74c3c; }
+
+        /* Styles for the Edit Modal */
+        .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.6); z-index: 1001; display: none; justify-content: center; align-items: center; }
+        .modal-overlay.is-visible { display: flex; }
+        .modal-content { background: white; padding: 2rem; border-radius: 8px; max-width: 500px; width: 90%; max-height: 90vh; overflow-y: auto; }
+        .image-management-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 10px; margin-bottom: 1rem; }
+        .image-preview { position: relative; }
+        .image-preview img { width: 100%; height: 100px; object-fit: cover; border-radius: 4px; }
+        .image-preview .delete-img-btn { position: absolute; top: 5px; right: 5px; background: #e74c3c; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <button id="logout-btn" class="cta-button" style="float: right;">Logout</button>
+        <h1>Admin Dashboard</h1>
+        
+        <div class="admin-section">
+            <h2>View Orders</h2>
+            <p>Orders submitted through the catering form are available in your Netlify account.</p>
+            <a href="https://app.netlify.com/" target="_blank" class="cta-button">Go to Netlify</a>
+        </div>
+        
+        <div class="admin-section">
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <label for="product-name">Product Name:</label>
+                <input type="text" id="product-name" required>
+                
+                <label for="product-price">Price:</label>
+                <input type="number" id="product-price" placeholder="e.g., 4.50" step="0.01" required>
+
+                <label for="product-desc">Product Description:</label>
+                <textarea id="product-desc" rows="4"></textarea>
+
+                <label for="product-image">Product Images (up to 6):</label>
+                <input type="file" id="product-image" accept="image/*" required multiple>
+
+                <label for="product-video">YouTube/Vimeo Video URL (Optional):</label>
+                <input type="url" id="product-video" placeholder="https://www.youtube.com/watch?v=...">
+
+                <button type="submit" class="cta-button" style="margin-top: 15px;">Add Product</button>
+                <p id="upload-status"></p>
+            </form>
+        </div>
+
+        <div class="admin-section">
+            <h2>Manage Existing Products</h2>
+            <div id="existing-products-list">
+                </div>
+        </div>
+
+    </div>
+
+    <div id="edit-modal" class="modal-overlay">
+        <div class="modal-content">
+            <h2>Edit Product</h2>
+            <form id="edit-product-form">
+                <input type="hidden" id="edit-product-id">
+
+                <label for="edit-product-name">Product Name:</label>
+                <input type="text" id="edit-product-name" required>
+                
+                <label for="edit-product-price">Price:</label>
+                <input type="number" id="edit-product-price" step="0.01" required>
+
+                <label for="edit-product-desc">Product Description:</label>
+                <textarea id="edit-product-desc" rows="4"></textarea>
+                
+                <label for="edit-product-video">YouTube/Vimeo Video URL (Optional):</label>
+                <input type="url" id="edit-product-video">
+
+                <label>Existing Images:</label>
+                <div id="edit-existing-images" class="image-management-grid"></div>
+
+                <label for="edit-product-image">Add New Images:</label>
+                <input type="file" id="edit-product-image" accept="image/*" multiple>
+
+                <div style="display: flex; gap: 10px; margin-top: 20px;">
+                    <button type="submit" class="cta-button edit-btn">Save Changes</button>
+                    <button type="button" id="cancel-edit-btn" class="cta-button" style="background-color: #7f8c8d;">Cancel</button>
+                </div>
+                <p id="edit-status"></p>
+            </form>
+        </div>
+    </div>
+    
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-storage-compat.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

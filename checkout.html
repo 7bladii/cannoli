@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cannolitaly</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        body { background-color: #f4f3ef; font-family: 'Montserrat', sans-serif; }
+        .checkout-container { max-width: 700px; margin: 50px auto; padding: 40px; background-color: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 8px; }
+        .checkout-container h1 { font-family: 'Cormorant Garamond', serif; text-align: center; }
+        .cart-item { display: flex; align-items: center; justify-content: space-between; padding: 15px 0; border-bottom: 1px solid #eee; }
+        .item-info { flex-grow: 1; }
+        .item-controls { display: flex; align-items: center; }
+        .item-controls button { background-color: #f1f1f1; border: 1px solid #ddd; color: #333; cursor: pointer; width: 30px; height: 30px; font-size: 1.2rem; }
+        .item-controls span { padding: 0 15px; font-size: 1.1rem; }
+        .remove-btn { background-color: #e74c3c; color: white; border: none; padding: 8px 12px; border-radius: 4px; cursor: pointer; margin-left: 20px; }
+        .empty-cart-message { text-align: center; padding: 40px; }
+        .checkout-form-container { margin-top: 30px; }
+        form input, form button { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; font-size: 1rem; }
+        #back-to-shop { display: inline-block; margin-top: 20px; color: #3D3D3D; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="checkout-container">
+        <h1>Confirm Your Order</h1>
+        <div id="cart-summary">
+            </div>
+        <div class="checkout-form-container" style="display: none;">
+            <hr>
+            <h2>Your Details</h2>
+            <form name="order" method="POST" data-netlify="true">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="hidden" name="cart-contents" id="cart-contents-input">
+                <button type="submit" class="cta-button">Place Order</button>
+            </form>
+        </div>
+        <a href="index.html#cannoli" id="back-to-shop">← Back to Shop</a>
+    </div>
+
+    <script src="checkout.js"></script>
+</body>
+</html>

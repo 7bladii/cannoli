@@ -6,14 +6,8 @@
     
     <title>Cannolitaly - Authentic Sicilian Cannolis</title>
     <meta name="description" content="Handcrafted cannolis made with our original Sicilian family recipe. Order online for delivery or pickup.">
-    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     
-    <meta property="og:title" content="Cannolitaly - Authentic Sicilian Cannolis">
-    <meta property="og:description" content="The unforgettable taste of Sicily, delivered to your table.">
-    <meta property="og:image" content="https://your-domain.com/images/social-cannoli.jpg">
-    <meta property="og:url" content="https://your-domain.com">
-    <meta name="twitter:card" content="summary_large_image">
-
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,51 +15,78 @@
 </head>
 <body>
 
-    <header class="mobile-header">
-        <a href="#home" class="mobile-logo">Cannolitaly</a>
-        <button class="mobile-nav-toggle" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
+    <button class="floating-menu-toggle" id="menu-toggle" aria-label="Abrir Menú">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
 
+    <div class="cart-icon-wrapper" id="cart-icon-wrapper">
+        <span id="cart-icon">🛒</span>
+        <span class="cart-count" id="cart-count">0</span>
+    </div>
+
+    <nav class="floating-nav" id="floating-nav">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about-us">About Us</a></li>
+            <li><a href="#cannoli">Cannoli</a></li>
+            <li><a href="#orders">Orders</a></li>
+            <li><a href="#catering">Catering</a></li>
+            <li><a href="#contact-info">Contact Info</a></li>
+        </ul>
+        <a href="checkout.html" id="checkout-btn-menu" class="cta-button" style="display: none; margin-top: 15px;">Checkout</a>
+    </nav>
+    
     <div class="website-container">
         
         <header id="home" class="brand-section">
-            <h1>Cannolitaly</h1>
-            <p>From our<br>Sicilian<br>family to<br>yours</p>
-            <hr>
-            <span>AN ORIGINAL RECIPE.</span>
-            <span>AN UNFORGETTABLE TASTE.</span>
+            <a href="#home">
+                <img src="images/logo.png" alt="Cannolitaly Logo" id="website-logo">
+            </a>
+
+            <nav class="desktop-nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about-us">About Us</a></li>
+                    <li><a href="#cannoli">Our Flavors</a></li>
+                    <li><a href="#orders">How to Order</a></li>
+                    <li><a href="#catering">Catering</a></li>
+                    <li><a href="#contact-info">Contact Info</a></li>
+                </ul>
+            </nav>
+
+            <div class="brand-footer">
+                <p>&copy; 2025 Cannolitaly</p>
+            </div>
         </header>
 
         <main class="main-content">
             
             <section id="cannoli" class="page-section">
-                <h2>Our Flavors</h2>
+                <h2 data-aos="fade-up">Our Flavors</h2>
                 <div class="products-grid" id="products-grid"></div>
             </section>
 
             <section id="about-us" class="page-section">
-                <h2>About Us</h2>
-                <p>Our story begins in a small kitchen in Palermo, Sicily, where Nonna Maria perfected her cannoli recipe over generations. It's a recipe built on love, patience, and the finest local ingredients. Today, we bring that same tradition to your table. Every cannoli is hand-filled, just moments before it reaches you, ensuring a crispy shell and a rich, creamy filling. This isn't just a dessert; it's a piece of our family history.</p>
+                <h2 data-aos="fade-up">About Us</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Our story begins in a small kitchen in Palermo, Sicily, where Nonna Maria perfected her cannoli recipe over generations. It's a recipe built on love, patience, and the finest local ingredients. Today, we bring that same tradition to your table. Every cannoli is hand-filled, just moments before it reaches you, ensuring a crispy shell and a rich, creamy filling. This isn't just a dessert; it's a piece of our family history.</p>
             </section>
 
             <section id="orders" class="page-section">
-                <h2>How to Order</h2>
-                <p>
+                <h2 data-aos="fade-up">How to Order</h2>
+                <p data-aos="fade-up" data-aos-delay="100">
                     Ready for a taste of Sicily? You can build your own box of cannolis directly from our "Our Flavors" section. 
-                    <strong>Please note: to ensure availabilty, all orders must be placed a minimum of 48 hours in advance.</strong> 
+                    <strong>Please note: to ensure availability, all orders must be placed a minimum of 48 hours in advance.</strong> 
                     Delivery is available within a 10-mile radius of West Hollywood.  and in-store pickup.
                 </p>
             </section>
 
             <section id="catering" class="page-section">
-                <h2>Catering</h2>
-                <p>Bring the magic of Cannolitaly to your next event! We offer catering services for weddings, corporate events, and private parties. We can create custom cannoli platters and even live filling stations to delight your guests.</p>
+                <h2 data-aos="fade-up">Catering</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Bring the magic of Cannolitaly to your next event! We offer catering services for weddings, corporate events, and private parties. We can create custom cannoli platters and even live filling stations to delight your guests.</p>
             
-                <div class="packages-container">
+                <div class="packages-container" data-aos="fade-up" data-aos-delay="200">
                     <div class="package-card">
                         <h3>🎉 Small Party</h3>
                         <p>Perfect for 20-50 guests.</p>
@@ -83,32 +104,47 @@
                     </div>
                 </div>
             
-                <div class="form-container">
+                <div class="form-container" data-aos="fade-up">
                     <h3>Direct Quote Request Form</h3>
                     <form name="catering-quote" method="POST" data-netlify="true" id="catering-form">
-                        <input type="text" name="name" placeholder="Full Name / Company" required>
-                        <input type="text" name="contact" placeholder="Email / Phone" required>
-                        <input type="date" name="event_date" required>
-                        <input type="number" name="guests" placeholder="Estimated Number of Guests" required>
-                        <select name="event_type" required>
-                            <option value="" disabled selected>Type of Event</option>
-                            <option value="Wedding">Wedding</option>
-                            <option value="Birthday">Birthday</option>
-                            <option value="Corporate">Corporate</option>
-                            <option value="Other">Other</option>
-                        </select>
-                        <textarea name="message" rows="4" placeholder="Additional Message / Special Requests"></textarea>
-                        <button type="submit" class="cta-button">Request My Quote</button>
+                        <div class="form-item-full-name">
+                            <input type="text" name="name" placeholder="Full Name / Company" required>
+                        </div>
+                        <div class="form-item-contact">
+                            <input type="text" name="contact" placeholder="Email / Phone" required>
+                        </div>
+                        <div class="form-item-date">
+                            <input type="date" name="event_date" required>
+                        </div>
+                        <div class="form-item-guests">
+                            <input type="number" name="guests" placeholder="Estimated Number of Guests" required>
+                        </div>
+                        <div class="form-item-event-type">
+                            <select name="event_type" required>
+                                <option value="" disabled selected>Type of Event</option>
+                                <option value="Wedding">Wedding</option>
+                                <option value="Birthday">Birthday</option>
+                                <option value="Corporate">Corporate</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-item-message">
+                            <textarea name="message" rows="4" placeholder="Additional Message / Special Requests"></textarea>
+                        </div>
+                        <div class="form-item-submit">
+                            <button type="submit" class="cta-button">Request My Quote</button>
+                        </div>
+    
                     </form>
                 </div>
             </section>
 
             <section id="contact-info" class="page-section">
-                <h2>Contact Info</h2>
-                <p>Have questions? We'd love to hear from you.</p>
-                <p><strong>Email:</strong> orders@cannolitaly.com</p>
-                <p><strong>Phone:</strong> (323) 834-6527</p>
-                <p><strong>Location:</strong> West Hollywood</p>
+                <h2 data-aos="fade-up">Contact Info</h2>
+                <p data-aos="fade-up" data-aos-delay="100">Have questions? We'd love to hear from you.</p>
+                <p data-aos="fade-up" data-aos-delay="150"><strong>Email:</strong>cannolitali@gmail.com</p>
+                <p data-aos="fade-up" data-aos-delay="200"><strong>Phone:</strong> (323) 617-2445</p>
+                <p data-aos="fade-up" data-aos-delay="250"><strong>Location:</strong> West Hollywood</p>
             </section>
 
             <footer>
@@ -116,29 +152,8 @@
             </footer>
 
         </main>
-
-        <nav class="navigation-section">
-            <div class="cart-icon-wrapper">
-                <span id="cart-icon">🛒</span>
-                <span class="cart-count" id="cart-count">0</span>
-                <a href="checkout.html" id="checkout-btn" class="cta-button" style="display: none; margin-top: 15px;">Checkout</a>
-            </div>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about-us">About Us</a></li>
-                <li><a href="#cannoli">Cannoli</a></li>
-                <li><a href="#orders">Orders</a></li>
-                <li><a href="#catering">Catering</a></li>
-                <li><a href="#contact-info">Contact Info</a></li>
-            </ul>
-        </nav>
-
+        
     </div>
-
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
-    
-    <script src="script.js"></script>
 
     <div class="mobile-cart-bar">
         <div class="cart-info">
@@ -156,8 +171,7 @@
             <h2>Your Cart</h2>
             <button id="close-cart-btn">&times;</button>
         </div>
-        <div id="mini-cart-items">
-            </div>
+        <div id="mini-cart-items"></div>
         <div class="mini-cart-footer">
             <div class="subtotal">
                 <span>Subtotal</span>
@@ -166,6 +180,19 @@
             <a href="checkout.html" class="cta-button">Proceed to Checkout</a>
         </div>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
+    
+    <script src="script.js"></script>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: true,
+      });
+    </script>
 
 </body>
 </html>

@@ -11,21 +11,41 @@
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery-bundle.min.css" />
 </head>
 <body>
 
-    <button class="floating-menu-toggle" id="menu-toggle" aria-label="Abrir Menú">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <div class="cart-icon-wrapper" id="cart-icon-wrapper">
-        <span id="cart-icon">🛒</span>
-        <span class="cart-count" id="cart-count">0</span>
+    <div class="mobile-header">
+        <a href="#home" class="mobile-logo-link">
+            <img src="images/logo.png" alt="Cannolitaly Logo" class="mobile-logo">
+        </a>
+        <div class="mobile-header-icons">
+            <div class="cart-icon-wrapper" id="cart-icon-wrapper-mobile">
+                <span id="cart-icon-mobile-btn">🛒</span>
+                <span class="cart-count" id="cart-count-mobile">0</span>
+            </div>
+            <button class="floating-menu-toggle" id="menu-toggle" aria-label="Abrir Menú">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
     </div>
 
+    <div class="desktop-icons">
+        <div class="cart-icon-wrapper" id="cart-icon-wrapper-desktop">
+            <span id="cart-icon">🛒</span>
+            <span class="cart-count" id="cart-count-desktop">0</span>
+        </div>
+        <button class="floating-menu-toggle" id="menu-toggle-desktop" aria-label="Abrir Menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </div>
+    
     <nav class="floating-nav" id="floating-nav">
         <ul>
             <li><a href="#home">Home</a></li>
@@ -177,13 +197,15 @@
                 <span>Subtotal</span>
                 <span id="mini-cart-subtotal">$0.00</span>
             </div>
-            <a href="checkout.html" class="cta-button">Proceed to Checkout</a>
+            <a href="checkout.html" id="checkout-btn" class="cta-button checkout-button">Proceed to Checkout</a>
         </div>
     </div>
 
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.7/firebase-firestore-compat.js"></script>
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+
     <script src="script.js"></script>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>

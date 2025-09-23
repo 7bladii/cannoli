@@ -4,10 +4,10 @@ html {
 }
 body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif; /* Mantenemos Montserrat, que es limpia y moderna */
-    background-image: none; /* Quitamos la imagen de fondo por completo */
-    background-color: #F8F8F8; /* Un gris muy claro para una base limpia */
-    color: #333333; /* Texto oscuro para buen contraste */
+    font-family: 'Montserrat', sans-serif;
+    background-image: none;
+    background-color: #F8F8F8;
+    color: #333333;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
@@ -19,47 +19,44 @@ body.no-scroll {
 .website-container {
     display: flex;
     width: 100%;
-    max-width: 1300px; /* Un poco más estrecho para un look moderno */
-    max-height: 750px; /* Un poco más alto */
-    background-color: #FFFFFF; /* Contenedor principal blanco */
-    box-shadow: 0 15px 40px rgba(0,0,0,0.08); /* Sombra más definida */
-    margin: 2.5rem auto; /* Más margen arriba/abajo */
-    border-radius: 12px; /* Bordes más redondeados */
+    max-width: 1400px;
+    max-height: 750px;
+    background-color: #FFFFFF;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+    margin: 2.5rem auto;
+    border-radius: 12px;
     overflow: hidden;
     position: relative;
-    border: 1px solid #EDEDED; /* Borde sutil */
+    border: 1px solid #EDEDED;
 }
 
 /* --- BRAND SECTION (Futuristic) --- */
 .brand-section {
-    flex: 1.2; /* Un poco menos ancho */
-    padding: 2.5rem 2rem; /* Ajuste de padding */
+    flex: 1.2;
+    padding: 2.5rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    align-items: center; /* Centramos el contenido horizontalmente */
+    align-items: center;
     position: relative;
     overflow: hidden;
-    background-image: none; /* Eliminar la imagen de fondo */
-    background-color: #2D2D3A; /* Un color oscuro y profundo para el panel izquierdo */
-    color: #E0E0E0; /* Texto claro para este fondo oscuro */
-    border-right: 1px solid rgba(255,255,255,0.05); /* Separador sutil */
+    background-color: #2D2D3A;
+    color: #E0E0E0;
+    border-right: 1px solid rgba(255,255,255,0.05);
 }
 .brand-section::before {
-    display: none; /* Eliminar el overlay oscuro */
+    display: none;
 }
 .header-image-container, .brand-text {
     display: none;
 }
-
-/* --- Logo en su posición original (izquierda) --- */
 #website-logo {
     position: static;
-    width: 200px; /* Ajustado para el nuevo tamaño del panel */
+    width: 200px;
     height: auto;
-    margin: 0 auto 2rem auto; /* Centrado y margen inferior */
+    margin: 0 auto 2rem auto;
     z-index: 2;
-    filter: brightness(0) invert(1); /* Hace el logo blanco para el fondo oscuro */
+    filter: brightness(0) invert(1);
     opacity: 0.9;
 }
 
@@ -69,7 +66,7 @@ body.no-scroll {
     z-index: 2;
     text-align: center;
     width: 100%;
-    margin-bottom: 2rem; /* Espacio antes del footer */
+    margin-bottom: 2rem;
 }
 .desktop-nav ul {
     list-style: none;
@@ -77,32 +74,32 @@ body.no-scroll {
     margin: 0;
 }
 .desktop-nav li {
-    margin: 1.3rem 0; /* Más espacio entre ítems */
+    margin: 1.3rem 0;
 }
 .desktop-nav a {
-    color: #E0E0E0; /* Color de texto claro para el menú */
+    color: #E0E0E0;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif; /* Usamos Montserrat para todo el texto principal */
-    font-weight: 500; /* Un poco más de peso */
-    font-size: 1.1rem; /* Tamaño más moderno */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 1.1rem;
     letter-spacing: 0.8px;
-    padding: 8px 15px; /* Más padding en el hover */
-    border-radius: 6px; /* Bordes ligeramente redondeados */
+    padding: 8px 15px;
+    border-radius: 6px;
     transition: all 0.3s ease;
-    display: block; /* Para que el padding y hover abarquen más */
+    display: block;
 }
 .desktop-nav a:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Hover sutil y claro */
+    background-color: rgba(255, 255, 255, 0.1);
     letter-spacing: 1.5px;
-    color: #FFFFFF; /* Blanco puro en hover */
+    color: #FFFFFF;
 }
 .brand-footer {
     display: block;
     position: relative;
     z-index: 2;
     text-align: center;
-    color: rgba(255, 255, 255, 0.4); /* Color grisáceo para el footer */
-    font-size: 0.75rem; /* Fuente más pequeña */
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 0.75rem;
     letter-spacing: 0.5px;
 }
 .brand-footer p {
@@ -113,7 +110,7 @@ body.no-scroll {
 /* --- MAIN CONTENT (Futuristic) --- */
 .main-content {
     flex: 2;
-    padding: 3rem 4rem; /* Más padding para airear */
+    padding: 3rem 4rem;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -133,85 +130,88 @@ body.no-scroll {
 }
 .page-section h2 {
     text-align: center;
-    font-size: 2.8rem; /* Título más grande */
+    font-size: 2.8rem;
     margin-bottom: 2.5rem;
-    font-family: 'Montserrat', sans-serif; /* Cambiamos a Montserrat */
-    font-weight: 700; /* Más audaz */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
     padding-bottom: 1rem;
-    border-bottom: 2px solid #E5E5E5; /* Borde más sólido */
+    border-bottom: 2px solid #E5E5E5;
     display: inline-block;
     margin-left: auto;
     margin-right: auto;
-    color: #222222; /* Color más oscuro para el título */
+    color: #222222;
 }
 .page-section p {
     font-size: 1rem;
-    line-height: 1.7; /* Más espacio entre líneas */
-    max-width: 700px; /* Un poco más ancho */
+    line-height: 1.7;
+    max-width: 700px;
     margin: 0 auto 18px;
     text-align: center;
     color: #555555;
 }
 
-/* --- PRODUCT CARDS (Futuristic) --- */
+/* --- PRODUCT CARDS (Futuristic & Gallery Ready) --- */
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Tarjetas un poco más grandes */
-    gap: 2rem; /* Más espacio entre tarjetas */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
 }
 .product-card {
-    border: 1px solid #EEEEEE; /* Borde sutil */
+    border: 1px solid #EEEEEE;
     background-color: #FFFFFF;
     text-align: center;
-    padding: 2rem; /* Más padding */
-    border-radius: 10px; /* Bordes más redondeados */
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06); /* Sombra más suave y extendida */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 .product-card:hover {
-    transform: translateY(-10px); /* Efecto de elevación más pronunciado */
+    transform: translateY(-10px);
     box-shadow: 0 18px 35px rgba(0,0,0,0.12);
 }
+.product-image-gallery a {
+    cursor: zoom-in;
+}
 .product-card img {
-    width: 90%; /* Ajuste para dejar un pequeño margen */
-    max-width: 150px; /* Límite para que no sean demasiado grandes */
-    height: 120px;
-    object-fit: contain;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
     border-radius: 6px;
-    margin-bottom: 1.5rem; /* Más espacio */
-    background-color: #FDFDFD; /* Fondo blanco para las imágenes */
-    padding: 5px; /* Pequeño padding alrededor de la imagen */
-    border: 1px solid #F0F0F0;
+    margin-bottom: 1.5rem;
+    background-color: #FDFDFD;
 }
 .product-card h3 {
     margin: 0 0 12px 0;
-    font-size: 1.25rem; /* Título de producto más grande */
-    font-family: 'Montserrat', sans-serif; /* Usamos Montserrat */
+    font-size: 1.25rem;
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     color: #333333;
 }
 .product-card .price {
-    font-size: 1.1rem; /* Precio más grande */
+    font-size: 1.1rem;
     font-weight: 600;
-    color: #007BFF; /* Un color de acento azul futurista para el precio */
+    color: #007BFF;
     margin-bottom: 18px;
 }
 .product-card button, .cta-button {
-    background-color: #007BFF; /* Botón azul futurista */
+    background-color: #007BFF;
     color: white;
     border: none;
     padding: 13px 28px;
     cursor: pointer;
     font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    border-radius: 8px; /* Bordes más redondeados */
+    border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     text-decoration: none;
     display: inline-block;
     box-shadow: 0 4px 10px rgba(0,123,255,0.2);
+    margin-top: auto;
 }
 .product-card button:hover, .cta-button:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el ratón */
+    background-color: #0056b3;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,123,255,0.3);
 }
@@ -230,7 +230,7 @@ body.no-scroll {
 #catering-form {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1.5rem; /* Más espacio */
+    gap: 1.5rem;
     max-width: 800px;
     margin: 0 auto;
     background-color: #FDFDFD;
@@ -241,8 +241,8 @@ body.no-scroll {
 }
 #catering-form input, #catering-form select, #catering-form textarea, #catering-form button {
     width: 100%;
-    padding: 14px; /* Más padding en los inputs */
-    border: 1px solid #DEDEDE; /* Borde más suave */
+    padding: 14px;
+    border: 1px solid #DEDEDE;
     border-radius: 6px;
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
@@ -251,7 +251,7 @@ body.no-scroll {
     color: #444444;
 }
 #catering-form input:focus, #catering-form select:focus, #catering-form textarea:focus {
-    border-color: #007BFF; /* Borde azul al enfocar */
+    border-color: #007BFF;
     outline: none;
     box-shadow: 0 0 0 3px rgba(0,123,255,0.2);
 }
@@ -270,9 +270,9 @@ body.no-scroll {
 /* --- FOOTER & ADMIN LINK (Futuristic) --- */
 footer {
     text-align: center;
-    padding: 2.5rem 0 1.5rem 0; /* Ajuste de padding */
+    padding: 2.5rem 0 1.5rem 0;
     margin-top: auto;
-    border-top: 1px solid #EFEFEF; /* Borde más claro */
+    border-top: 1px solid #EFEFEF;
     color: #999999;
     font-size: 0.85rem;
 }
@@ -282,7 +282,7 @@ footer {
     transition: color 0.3s;
 }
 .admin-link:hover {
-    color: #007BFF; /* Enlace admin con acento futurista */
+    color: #007BFF;
 }
 
 /* ================================================== */
@@ -293,11 +293,11 @@ footer {
     top: 0;
     right: 0;
     width: 100%;
-    max-width: 380px; /* Un poco más estrecho */
+    max-width: 380px;
     height: 100%;
     background-color: #FFFFFF;
     z-index: 2001;
-    box-shadow: -8px 0 30px rgba(0,0,0,0.1); /* Sombra más fuerte */
+    box-shadow: -8px 0 30px rgba(0,0,0,0.1);
     transform: translateX(100%);
     transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
     display: flex;
@@ -323,13 +323,13 @@ footer {
 #close-cart-btn {
     background: none;
     border: none;
-    font-size: 2.2rem; /* Tamaño del icono */
+    font-size: 2.2rem;
     cursor: pointer;
     color: #888;
     transition: color 0.3s;
 }
 #close-cart-btn:hover {
-    color: #007BFF; /* Acento futurista al cerrar */
+    color: #007BFF;
 }
 #mini-cart-items {
     flex-grow: 1;
@@ -338,12 +338,12 @@ footer {
 }
 .mini-cart-item {
     display: flex;
-    gap: 18px; /* Más espacio */
+    gap: 18px;
     padding: 18px 0;
     border-bottom: 1px solid #F5F5F5;
 }
 .mini-cart-item img {
-    width: 70px; /* Imágenes más grandes */
+    width: 70px;
     height: 70px;
     object-fit: cover;
     border-radius: 6px;
@@ -377,17 +377,18 @@ footer {
 .mini-cart-footer {
     padding: 1.5rem 1.8rem;
     border-top: 1px solid #F0F0F0;
+    background-color: #FAFAFA;
 }
 .subtotal {
     display: flex;
     justify-content: space-between;
-    font-size: 1.3rem; /* Subtotal más grande */
+    font-size: 1.3rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: #333333;
 }
 .checkout-button {
-    background-color: #28A745; /* Botón de checkout verde */
+    background-color: #28A745;
     color: white;
     padding: 15px 0;
     width: 100%;
@@ -396,17 +397,22 @@ footer {
     font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     box-shadow: 0 5px 15px rgba(40,167,69,0.2);
+    text-align: center;
 }
 .checkout-button:hover {
     background-color: #218838;
     box-shadow: 0 6px 20px rgba(40,167,69,0.3);
+    transform: translateY(-2px);
 }
 
 /* -------------------------------------------------- */
 /* ---           DESIGN FOR MOBILE (Futuristic) --- */
 /* -------------------------------------------------- */
+.mobile-header { display: none; }
+.desktop-icons { display: block; }
+
 @media (max-width: 1200px) {
     body {
         background-image: none;
@@ -421,31 +427,46 @@ footer {
         border-radius: 0;
         overflow: visible;
         background-color: transparent;
-        border: none; /* Quitamos el borde en móvil */
+        border: none;
     }
     .brand-section {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem 1.5rem; /* Ajuste de padding */
-        background: #FFFFFF; /* Fondo blanco para el header móvil */
-        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        background-image: none;
-        background-color: #FFFFFF;
-        border-right: none; /* Quitamos el borde en móvil */
-    }
-    #website-logo {
-        position: static;
-        width: 140px; /* Tamaño del logo en móvil */
-        margin: 0;
-        filter: none; /* Volvemos el logo a su color original en móvil */
-        opacity: 1;
-    }
-    .desktop-nav, .brand-footer {
         display: none;
     }
+    .desktop-icons {
+        display: none;
+    }
+    
+    /* Header para móvil */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.8rem 1.5rem;
+        background: #FFFFFF;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        position: sticky;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 100;
+        box-sizing: border-box;
+    }
+    .mobile-logo {
+        width: 140px;
+        height: auto;
+    }
+    .mobile-header-icons {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+    .mobile-header .cart-icon-wrapper, .mobile-header .floating-menu-toggle {
+        position: static;
+    }
+
     .main-content {
         padding: 1.5rem;
+        padding-top: 2rem;
         padding-bottom: 90px;
         background-color: #FFFFFF;
         overflow-y: visible;
@@ -484,54 +505,97 @@ footer {
 }
 
 /* ================================================== */
+/* --- ESTILOS PARA LA GALERÍA (LightGallery) --- */
+/* ================================================== */
+.lg-backdrop {
+    background-color: rgba(10, 10, 20, 0.9);
+}
+.lg-sub-html {
+    background-color: rgba(20, 20, 30, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 20px 25px;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+.lg-sub-html h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin: 0 0 10px 0;
+}
+.lg-sub-html p {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    color: #D0D0D0;
+    line-height: 1.6;
+    margin: 0;
+}
+.lg-toolbar {
+    background-color: rgba(20, 20, 30, 0.8);
+}
+.lg-toolbar .lg-icon {
+    color: #FFFFFF;
+    transition: color 0.3s ease;
+}
+.lg-toolbar .lg-icon:hover {
+    color: #007BFF;
+}
+.lg-next, .lg-prev {
+    color: #FFFFFF;
+    background: none;
+    transition: color 0.3s ease;
+}
+.lg-next:hover, .lg-prev:hover {
+    color: #007BFF;
+}
+
+/* ================================================== */
 /* --- ESTILOS PARA EL MENÚ FLOTANTE Y HEADER ICONS (Futuristic) --- */
 /* ================================================== */
-.cart-icon-wrapper {
-    position: fixed;
-    top: 1.5rem; /* Ajuste de posición */
-    right: 6.5rem; /* Ajuste de posición */
-    z-index: 1001;
-    cursor: pointer;
-}
-#cart-icon {
-    font-size: 30px; /* Icono un poco más grande */
-    color: #555555; /* Color del icono */
+#cart-icon, #cart-icon-mobile-btn {
+    font-size: 28px;
+    color: #555555;
     transition: transform 0.2s, color 0.3s;
 }
-.cart-icon-wrapper:hover #cart-icon {
+.cart-icon-wrapper:hover #cart-icon,
+.cart-icon-wrapper:hover #cart-icon-mobile-btn {
     transform: scale(1.1);
-    color: #007BFF; /* Acento azul al pasar el ratón */
+    color: #007BFF;
 }
 .cart-count {
     position: absolute;
-    top: -10px; /* Ajuste de posición */
-    right: -10px; /* Ajuste de posición */
-    background-color: #E74C3C; /* Rojo de notificación */
+    top: -8px;
+    right: -8px;
+    background-color: #E74C3C;
     color: white;
     border-radius: 50%;
-    width: 22px; /* Más grande */
-    height: 22px;
+    width: 20px;
+    height: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 13px; /* Fuente más grande */
+    font-size: 12px;
     font-weight: bold;
     border: 2px solid #FFFFFF;
 }
 .floating-menu-toggle {
-    position: fixed;
-    top: 1.8rem; /* Ajuste de posición */
-    right: 2.5rem;
-    z-index: 1001;
     background: none;
     border: none;
-    width: 32px; /* Más ancho */
-    height: 28px; /* Más alto */
+    width: 30px;
+    height: 25px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
     padding: 0;
+    z-index: 1001;
+}
+.desktop-icons .floating-menu-toggle {
+    position: fixed;
+    top: 2.2rem;
+    right: 3rem;
 }
 .floating-menu-toggle span {
     width: 100%;
@@ -540,9 +604,9 @@ footer {
     border-radius: 3px;
     transition: transform 0.3s, opacity 0.3s;
 }
-.floating-menu-toggle.is-open span:nth-child(1) { transform: translateY(12.5px) rotate(45deg); } /* Ajuste */
+.floating-menu-toggle.is-open span:nth-child(1) { transform: translateY(11px) rotate(45deg); }
 .floating-menu-toggle.is-open span:nth-child(2) { opacity: 0; }
-.floating-menu-toggle.is-open span:nth-child(3) { transform: translateY(-12.5px) rotate(-45deg); } /* Ajuste */
+.floating-menu-toggle.is-open span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
 
 .floating-nav {
     position: fixed;
@@ -555,8 +619,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(244, 243, 239, 0.95); /* Fondo semitransparente más opaco */
-    backdrop-filter: blur(10px); /* Blur más fuerte */
+    background-color: rgba(248, 248, 248, 0.95);
+    backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     opacity: 0;
     visibility: hidden;
@@ -572,10 +636,10 @@ footer {
     text-align: center;
 }
 .floating-nav li {
-    margin-bottom: 2.2rem; /* Más espacio */
+    margin-bottom: 2.2rem;
 }
 .floating-nav a {
-    font-family: 'Montserrat', sans-serif; /* Cambiamos a Montserrat */
+    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     font-size: 2.5rem;
     color: #333333;
@@ -583,20 +647,5 @@ footer {
     transition: color 0.3s;
 }
 .floating-nav a:hover {
-    color: #007BFF; /* Acento futurista al pasar el ratón */
-}
-
-/* Mobile adjustments for header icons */
-@media (max-width: 1200px) {
-    .cart-icon-wrapper {
-        top: 0.8rem;
-        right: 5rem;
-    }
-    .floating-menu-toggle {
-        top: 1rem;
-        right: 1.5rem;
-    }
-    .cart-count {
-        border-color: #FFFFFF;
-    }
+    color: #007BFF;
 }
